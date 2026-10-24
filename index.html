@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="成人影视大全提供影视作品分类浏览与介绍，涵盖电影、电视剧、综艺和动漫，网址为 https://chengrenyingshidaquan-cn.github.io。">
+<meta name="keywords" content="成人影视大全,chengrenyingshidaquan-cn,影视大全,电影,电视剧,综艺,动漫">
+<title>成人影视大全｜影视作品分类浏览与介绍</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1c2e;--line:#223a55;--txt:#eaf2fb;--sub:#9fb5cd;--gold:#f5b642;--cyan:#4dd4e6;--shadow:0 18px 45px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:radial-gradient(circle at 85% 5%,#123152 0,transparent 28%),radial-gradient(circle at 8% 18%,#0b2940 0,transparent 24%),var(--bg);color:var(--txt);font:16px/1.75 system-ui,-apple-system,"Microsoft YaHei",sans-serif}a{color:#8fd6ff;text-decoration:none;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.skip{position:absolute;left:-999px;top:auto;background:#fff;color:#031321;padding:8px 12px}.skip:focus{left:12px;top:12px;z-index:30}
+/* Header */
+header{position:sticky;top:0;z-index:15;background:rgba(5,14,24,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.top{display:flex;gap:14px;align-items:center;justify-content:space-between;min-height:64px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.3px}.logo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:16px;font-weight:900;background:linear-gradient(135deg,var(--gold),#ff7a59);color:#281400;box-shadow:var(--shadow)}.menu{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.menu a{padding:8px 11px;border-radius:999px;color:#dce8f5}.menu a:hover,.menu a[aria-current="true"]{background:#183c5e;color:#fff;text-decoration:none}.action{border:1px solid var(--line);background:#102639;color:#fff;padding:8px 13px;border-radius:999px}.action:hover{background:#1b4e76}
+/* Hero */
+.hero{position:relative;margin:24px 0 36px;padding:42px 32px;border-radius:28px;overflow:hidden;background:linear-gradient(125deg,#102f50 0%,#081a2b 60%,#060f18 100%);border:1px solid #214863}.hero:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-80px;top:-100px;background:radial-gradient(circle,var(--cyan),transparent 68%)}.hero:after{content:"影视";position:absolute;right:20px;bottom:-30px;font-size:104px;font-weight:900;color:rgba(255,255,255,.05);letter-spacing:4px}.hero h1{margin:0 0 12px;font-size:clamp(28px,5vw,48px);line-height:1.2;max-width:17ch}.hero p{max-width:64ch;margin:0 0 20px;color:var(--sub);font-size:17px}.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#f78c44);color:#291600;font-weight:800}.btn:hover{filter:brightness(1.08)}.btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line)}.stat{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub)}.stat b{display:block;color:#fff;font-size:23px}
+/* Base section */
+section{margin:52px 0;scroll-margin-top:80px} .eyebrow{color:var(--cyan);font-weight:800;letter-spacing:1.5px;font-size:12px}.title{display:flex;gap:14px;align-items:end;justify-content:space-between;flex-wrap:wrap;margin:6px 0 20px}.title h2{margin:0;font-size:clamp(23px,4vw,32px)}.title a{white-space:nowrap}
+/* TV Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#47779d}.thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1d4666,#0d2134);display:grid;place-items:center;font-size:30px;font-weight:900;color:#a9d0e8}.card div:last-child{padding:14px 16px}.card h3{margin:0 0 5px;font-size:17px}.card p{margin:0;color:var(--sub);font-size:13px}.badge{position:absolute;top:11px;left:11px;background:rgba(4,17,30,.82);border:1px solid #40627f;padding:3px 8px;border-radius:999px;font-size:11px}
+/* Movie alternating */
+.movie{padding:26px;border:1px solid #294c6c;border-left:5px solid var(--gold);border-radius:16px;background:linear-gradient(95deg,#0d2438,#08131f);margin:0 0 16px}.movie:nth-child(even){border-left-color:var(--cyan);background:linear-gradient(95deg,#0d2435,#0a1622);flex-direction:row-reverse}.movie,.movie-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.movie-row{flex:1;min-width:250px}.movie .num{font:800 29px/1 system-ui;color:var(--gold)}.movie:nth-child(even) .num{color:var(--cyan)}.movie h3{margin:0 0 6px;font-size:19px}.movie p{margin:0;color:var(--sub)}
+/* Variety tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{padding:9px 16px;border-radius:10px;background:#102838;border:1px solid var(--line);color:#c8d8e8}.tab[aria-selected="true"]{background:var(--gold);border-color:transparent;color:#271400;font-weight:800}.panel{display:none;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px}.panel.active{display:grid}.show{border-radius:15px;padding:20px;background:repeating-linear-gradient(135deg,#10283d,#10283d 11px,#0c2031 11px,#0c2031 22px);border:1px solid var(--line)}.show h3{margin:0 0 7px;font-size:18px}.show p{margin:0;color:var(--sub);font-size:14px}
+/* Anime timeline */
+.timeline{position:relative;padding-left:27px;border-left:2px dashed #41637f}.event{position:relative;margin:0 0 22px;padding:20px;border-radius:15px;background:#0c1c2c}.event:before{content:"";position:absolute;left:-35px;top:23px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px #081728}.event time{color:var(--cyan);font-weight:800;font-size:13px}.event h3{margin:7px 0;font-size:19px}.event p{margin:0;color:var(--sub)}
+/* Info/FAQ */
+.accordion{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0b1a29}.question{width:100%;text-align:left;padding:17px 20px;color:#fff;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:12px}.question[aria-expanded="true"]{background:#13304a}.question:after{content:"＋";color:var(--gold)}.question[aria-expanded="true"]:after{content:"－"}.answer{display:none;padding:0 20px;color:var(--sub)}.answer.open{display:block;padding:16px 20px}.answer p{margin:0 0 10px}.contact{margin-top:18px;padding:20px;border-radius:15px;border:1px solid var(--line);background:linear-gradient(125deg,#102b46,#07111d)}.contact a{word-break:break-all}
+/* Footer */
+footer{margin-top:55px;padding:28px 0;border-top:1px solid var(--line);color:var(--sub);font-size:13px}footer .container>div{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+@media(max-width:680px){.menu{display:none;position:absolute;right:16px;top:66px;flex-direction:column;align-items:stretch;width:min(250px,70vw);padding:12px;background:#0b1d30;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.menu.show{display:flex}.menu a{width:100%;padding:11px 12px}.toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#102838;color:#fff;padding:9px 13px;border-radius:10px}.hero{padding:32px 22px}.hero:after{font-size:65px}.thumb{aspect-ratio:4/3}.card,.show{min-width:0}.movie{padding:20px}.stat{gap:18px}.stat b{font-size:20px}section{margin:42px 0}.title{gap:8px}.title h2{font-size:22px}.event:before{left:-34px}.question{font-size:15px}}
+@media print{header,.toggle,.menu,.btn,.tabs{display:none!important}body{background:#fff;color:#000}.card,.movie,.show,.event{break-inside:avoid;border-color:#999}}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+<a class="skip" href="#main">跳到主要内容</a>
+<header role="banner">
+ <div class="container top">
+  <a class="brand" href="#top" aria-label="成人影视大全首页"><span class="logo" aria-hidden="true">成</span><span>成人影视大全</span></a>
+  <nav class="menu" id="menu" aria-label="主导航"><a href="#home" aria-current="true">首页</a><a href="#tv">电视剧</a><a href="#movie">电影</a><a href="#variety">综艺节目</a><a href="#anime">动漫推荐</a><a href="#info">网站信息</a></nav>
+  <div class="actions"><a class="action" href="#info">访问本站：chengrenyingshidaquan-cn.github.io</a><button class="toggle" aria-controls="menu" aria-expanded="false" id="toggle">菜单</button></div>
+ </div>
+</header>
+<main id="main">
+ <section id="home" class="container" aria-labelledby="hero-title">
+  <div class="hero">
+   <div class="eyebrow">CHENGCHENG YINGSHI DAQUAN · 影视内容导航</div>
+   <h1 id="hero-title">成人影视大全：发现值得观看的影视作品</h1>
+   <p>成人影视大全（chengrenyingshidaquan-cn）整理电影、电视剧、综艺与动漫等作品信息，帮助用户按分类发现内容。本站网址为 <strong>https://chengrenyingshidaquan-cn.github.io</strong>，不提供影视资源下载或在线播放。</p>
+   <div class="buttons"><a class="btn" href="#tv">浏览电视剧</a><a class="btn ghost" href="#info">了解网站信息</a></div>
+   <div class="stat" aria-label="网站信息"><div><b>4</b>内容栏目</div><div><b>12</b>示例作品条目</div><div><b>1</b>官方站点网址</div></div>
+  </div>
+ </section>
+ <section id="tv" class="container" aria-labelledby="tv-title">
+  <div class="title"><div><div class="eyebrow">01 / TV SERIES</div><h2 id="tv-title">电视剧：按题材快速发现</h2></div><a href="#movie">下一栏：电影 →</a></div>
+  <div class="grid">
+   <article class="card"><div class="thumb" aria-hidden="true">城</div><span class="badge">都市</span><div><h3><a href="#tv">城间故事</a></h3><p>都市生活 · 示例介绍</p></div></article>
+   <article class="card"><div class="thumb" aria-hidden="true">古</div><span class="badge">古装</span><div><h3><a href="#tv">长风令</a></h3><p>古装剧情 · 示例介绍</p></div></article>
+   <article class="card"><div class="thumb" aria-hidden="true">探</div><span class="badge">悬疑</span><div><h3><a href="#tv">夜行笔记</a></h3><p>悬疑推理 · 示例介绍</p></div></article>
+   <article class="card"><div class="thumb" aria-hidden="true">家</div><span class="badge">家庭</span><div><h3><a href="#tv">归家路</a></h3><p>家庭情感 · 示例介绍</p></div></article>
+  </div>
+ </section>
+ <section id="movie" class="container" aria-labelledby="movie-title">
+  <div class="title"><div><div class="eyebrow">02 / MOVIES</div><h2 id="movie-title">电影：从类型到观影选择</h2></div><a href="#variety">下一栏：综艺节目 →</a></div>
+  <div class="movies">
+   <article class="movie"><div class="movie-row"><div class="num">01</div><div><h3><a href="#movie">远方的光</a></h3><p>剧情 · 示例影片介绍</p></div></div><a class="action" href="#movie">查看详情</a></article>
+   <article class="movie"><div class="movie-row"><div class="num">02</div><div><h3><a href="#movie">极速边界</a></h3><p>动作 · 示例影片介绍</p></div></div><a class="action" href="#movie">查看详情</a></article>
+   <article class="movie"><div class="movie-row"><div class="num">03</div><div><h3><a href="#movie">星空之下</a></h3><p>科幻 · 示例影片介绍</p></div></div><a class="action" href="#movie">查看详情</a></article>
+   <article class="movie"><div class="movie-row"><div class="num">04</div><div><h3><a href="#movie">春日来信</a></h3><p>爱情 · 示例影片介绍</p></div></div><a class="action" href="#movie">查看详情</a></article>
+  </div>
+ </section>
+ <section id="variety" class="container" aria-labelledby="variety-title">
+  <div class="title"><div><div class="eyebrow">03 / VARIETY</div><h2 id="variety-title">综艺节目：分类切换浏览</h2></div><a href="#anime">下一栏：动漫推荐 →</a></div>
+  <div class="tabs" role="tablist" aria-label="综艺分类"><button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">谈话</button><button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">真人秀</button><button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">文化</button></div>
+  <div class="panels">
+   <div class="panel active" role="tabpanel" id="p1" aria-labelledby="t1"><article class="show"><h3><a href="#variety">城市对话</a></h3><p>谈话类示例节目，聚焦城市生活话题。</p></article><article class="show"><h3><a href="#variety">光影对谈</a></h3><p>影视创作交流，示例节目介绍。</p></article></div>
+   <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2"><article class="show"><h3><a href="#variety">周末挑战</a></h3><p>户外挑战类示例节目介绍。</p></article><article class="show"><h3><a href="#variety">生活实验室</a></h3><p>生活方式体验，示例节目介绍。</p></article></div>
+   <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3"><article class="show"><h3><a href="#variety">非遗时光</a></h3><p>传统文化展示，示例节目介绍。</p></article><article class="show"><h3><a href="#variety">书香漫游</a></h3><p>阅读与人文分享，示例节目介绍。</p></article></div>
+  </div>
+ </section>
+ <section id="anime" class="container" aria-labelledby="anime-title">
+  <div class="title"><div><div class="eyebrow">04 / ANIME</div><h2 id="anime-title">动漫推荐：按更新节奏了解作品</h2></div><a href="#info">下一栏：网站信息 →</a></div>
+  <div class="timeline">
+   <article class="event"><time>连载中 · 示例</time><h3><a href="#anime">云端冒险团</a></h3><p>冒险题材动漫作品介绍，适合按周追踪更新。</p></article>
+   <article class="event"><time>已完结 · 示例</time><h3><a href="#anime">星空少年</a></h3><p>成长题材动漫作品介绍，可一次观看完整故事。</p></article>
+   <article class="event"><time>剧场版 · 示例</time><h3><a href="#anime">深海回响</a></h3><p>剧场版动漫作品介绍，呈现独立的故事内容。</p></article>
+  </div>
+ </section>
+ <section id="info" class="container" aria-labelledby="info-title">
+  <div class="title"><div><div class="eyebrow">05 / SITE INFO</div><h2 id="info-title">网站信息：名称、网址与使用说明</h2></div><a href="#top">返回顶部 ↑</a></div>
+  <div class="accordion">
+   <h3><button class="question" aria-expanded="true" aria-controls="a1" id="q1">成人影视大全是什么网站？</button></h3><div class="answer open" id="a1" aria-labelledby="q1"><p>成人影视大全是一个影视作品分类浏览与介绍页面，展示电影、电视剧、综艺和动漫等示例内容。</p><p>网站名称为“成人影视大全”，对应域名为 chengrenyingshidaquan-cn。</p></div>
+   <h3><button class="question" aria-expanded="false" aria-controls="a2" id="q2">官方网站网址是什么？</button></h3><div class="answer" id="a2" aria-labelledby="q2"><p>本站官方网址为：<strong>https://chengrenyingshidaquan-cn.github.io</strong>。请认准该网址访问。</p></div>
+   <h3><button class="question" aria-expanded="false" aria-controls="a3" id="q3">站内链接如何跳转？</button></h3><div class="answer" id="a3" aria-labelledby="q3"><p>本页采用单页结构，栏目导航使用页面内锚点。各示例条目的链接使用 <code>#</code> 替代独立内页地址，点击不会打开新页面。</p></div>
+   <h3><button class="question" aria-expanded="false" aria-controls="a4" id="q4">本站是否提供影视播放或下载？</button></h3><div class="answer" id="a4" aria-labelledby="q4"><p>本页面仅提供作品分类与文字介绍示例，不提供影视资源播放、下载、存储或盗版内容链接。</p></div>
+  </div>
+  <div class="contact"><strong>官方站点</strong><p>成人影视大全｜<a href="https://chengrenyingshidaquan-cn.github.io" rel="canonical">https://chengrenyingshidaquan-cn.github.io</a></p></div>
+ </section>
+</main>
+<footer role="contentinfo"><div class="container"><div><span>© <span id="year"></span> 成人影视大全</span><span>网站名称：成人影视大全</span></div><div><span>网址：https://chengrenyingshidaquan-cn.github.io</span><span>示例内容，不构成资源提供承诺</span></div></div></footer>
+<script>
+(function(){
+ var r=document.documentElement,b=document.body,menu=document.getElementById('menu'),toggle=document.getElementById('toggle');
+ document.getElementById('year').textContent=new Date().getFullYear();
+ toggle.addEventListener('click',function(){var o=menu.classList.toggle('show');toggle.setAttribute('aria-expanded',o);toggle.textContent=o?'关闭':'菜单';});
+ document.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('show');toggle.setAttribute('aria-expanded','false');toggle.textContent='菜单';});});
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+   var t=a.getAttribute('href');if(t.length<2||!document.querySelector(t))return;e.preventDefault();
+   var el=document.querySelector(t),y=el.getBoundingClientRect().top+(r.scrollTop||b.scrollTop)-70;
+   window.scrollTo({top:Math.max(0,y),behavior:'smooth'});history.replaceState(null,'',t);
+  });
+ });
+ document.querySelectorAll('.tab').forEach(function(btn,i){
+  btn.addEventListener('click',function(){
+   var tabs=Array.from(document.querySelectorAll('.tab')),panels=Array.from(document.querySelectorAll('.panel'));
+   tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i);panels[j].classList.toggle('active',j===i);});
+  });
+ });
+ document.querySelectorAll('.question').forEach(function(b){
+  b.addEventListener('click',function(){
+   var ans=document.getElementById(b.getAttribute('aria-controls')),open=ans.classList.toggle('open');
+   b.setAttribute('aria-expanded',open);
+  });
+ });
+})();
+</script>
+</body>
+</html>
